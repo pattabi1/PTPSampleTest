@@ -1,0 +1,94 @@
+﻿@model IEnumerable<PTPTestPortal.Models.NEWs>
+
+@{
+    ViewData["Title"] = "News";
+}
+
+<h8>News</h8>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.webSectionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UploadID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Caption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.featuredCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.newsDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.startOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.endOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isGlobal)
+            </th>
+            <th><a asp-action="CreateorEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Create News</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.webSectionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UploadID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.featuredCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.newsDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isGlobal)
+            </td>
+            <td>
+                <a asp-action="CreateorEdit" asp-route-id="@item.NewsID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.NewsID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

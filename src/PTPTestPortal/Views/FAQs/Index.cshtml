@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PTPTestPortal.Models.FAQ>
+
+@{
+    ViewData["Title"] = "FAQs";
+}
+
+<h8>FAQs</h8>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.webSectionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.featuredCode)
+            </th>
+            <th><a asp-action="CreateorEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Create FAQs</a></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.webSectionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.answer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.featuredCode)
+            </td>
+            <td>
+                <a asp-action="CreateorEdit" asp-route-id="@item.FAQID">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.FAQID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,84 @@
+﻿@model PTPTestPortal.Models.NEWs
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NEWs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <input type="hidden" asp-for="NewsID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="webSectionID" class="control-label"></label>
+                <input asp-for="webSectionID" class="form-control" />
+                <span asp-validation-for="webSectionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UploadID" class="control-label"></label>
+                <input asp-for="UploadID" class="form-control" />
+                <span asp-validation-for="UploadID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Caption" class="control-label"></label>
+                <input asp-for="Caption" class="form-control" />
+                <span asp-validation-for="Caption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sOrder" class="control-label"></label>
+                <input asp-for="sOrder" class="form-control" />
+                <span asp-validation-for="sOrder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="featuredCode" class="control-label"></label>
+                <input asp-for="featuredCode" class="form-control" />
+                <span asp-validation-for="featuredCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="newsDate" class="control-label"></label>
+                <input asp-for="newsDate" class="form-control" />
+                <span asp-validation-for="newsDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="startOn" class="control-label"></label>
+                <input asp-for="startOn" class="form-control" />
+                <span asp-validation-for="startOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="endOn" class="control-label"></label>
+                <input asp-for="endOn" class="form-control" />
+                <span asp-validation-for="endOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="isGlobal" class="control-label"></label>
+                <input asp-for="isGlobal" class="form-control" />
+                <span asp-validation-for="isGlobal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
